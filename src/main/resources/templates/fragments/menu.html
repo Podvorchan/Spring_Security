@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+<div style="background-color: #00FF00; width: 100%; height: 36px">
+<sidebar th:fragment="sidebar">
+  <nav>
+    <h1>Menu</h1>
+    <ul class="buttons">
+      <li><button type="button"><a href="/home">Home</a></button></li>
+      <li th:if="${#authorization.expression('hasAuthority(''ADMIN'')')}"><button type="button"><a href="/products">Product service</a></button></li>
+      <li><button type="button"><a href="/about">About</a></button></li>
+    </ul>
+  </nav>
+</sidebar>
+</body>
+</html>
